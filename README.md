@@ -41,8 +41,8 @@ This is a self-contained Expense Management module built with Laravel 11+ using 
 ### 1. Clone the Repo & Install
 
 ```bash
-git clone <repo-url>
-cd expense-manager
+git clone https://github.com/anfathhifans/Laravel-Expense-Module.git
+cd Laravel-Expense-Module
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -120,20 +120,6 @@ Modules/
 * UUID is used for expense IDs
 * Auth is out of scope
 * Only one user context assumed
-
----
-
-## ⏱ Time Spent
-
-> \~4-5 hours including writing boilerplate, service abstraction, testing, and documentation.
-
----
-
-## 📋 To Do (Optional Enhancements)
-
-* Attach user\_id (once auth is added)
-* Add category filtering from separate table
-* Export to CSV/PDF
 
 ---
 
