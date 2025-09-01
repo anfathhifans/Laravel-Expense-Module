@@ -1,0 +1,332 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/expenses
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List all expenses'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category:
+        name: category
+        description: 'Filter by category.'
+        required: false
+        example: travel
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      start_date:
+        name: start_date
+        description: 'date Filter start (YYYY-MM-DD).'
+        required: false
+        example: '2025-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: 'date Filter end (YYYY-MM-DD).'
+        required: false
+        example: '2025-12-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      category: travel
+      start_date: '2025-01-01'
+      end_date: '2025-12-31'
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          [
+              {
+                "id": "uuid",
+                "title": "Lunch",
+                "amount": 45.50,
+                "category": "food",
+                "expense_date": "2025-07-01",
+                "notes": "Client meeting"
+              }
+          ]
+        headers: []
+        description: Success
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/expenses
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create an expense'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Title of the expense.'
+        required: true
+        example: Flight
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      amount:
+        name: amount
+        description: Amount.
+        required: true
+        example: '123.45'
+        type: decimal
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      category:
+        name: category
+        description: Category.
+        required: true
+        example: travel
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      expense_date:
+        name: expense_date
+        description: 'Expense date.'
+        required: true
+        example: '2025-07-01'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      notes:
+        name: notes
+        description: 'Notes (optional).'
+        required: false
+        example: 'Business trip'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      title: Flight
+      amount: '123.45'
+      category: travel
+      expense_date: '2025-07-01'
+      notes: 'Business trip'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/expenses/{expense_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update an expense'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expense_id:
+        name: expense_id
+        description: 'The ID of the expense.'
+        required: true
+        example: 0197e819-695b-7182-8807-749b009e28df
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'uuid required Expense UUID.'
+        required: false
+        example: 3f0c...
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expense_id: 0197e819-695b-7182-8807-749b009e28df
+      id: 3f0c...
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Title of the expense.'
+        required: false
+        example: Taxi
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      amount:
+        name: amount
+        description: Amount.
+        required: false
+        example: '20'
+        type: decimal
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      category:
+        name: category
+        description: Category.
+        required: false
+        example: transport
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      expense_date:
+        name: expense_date
+        description: 'Expense date.'
+        required: false
+        example: '2025-07-02'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      notes:
+        name: notes
+        description: 'Additional notes about the expense (optional).'
+        required: false
+        example: 'Purchased printer paper and pens'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      title: Taxi
+      amount: '20'
+      category: transport
+      expense_date: '2025-07-02'
+      notes: 'Purchased printer paper and pens'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/expenses/{expense_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete an expense'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expense_id:
+        name: expense_id
+        description: 'The ID of the expense.'
+        required: true
+        example: 0197e819-695b-7182-8807-749b009e28df
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'uuid required Expense UUID.'
+        required: false
+        example: 3f0c...
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expense_id: 0197e819-695b-7182-8807-749b009e28df
+      id: 3f0c...
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: Deleted
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
