@@ -92,6 +92,33 @@ All routes are prefixed with `/api/expenses`
 
 ---
 
+## 🧪 Running Tests
+
+Run tests:
+```
+php artisan test
+```
+---
+
+## 📘 API Documentation (Scribe)
+
+Generate docs:
+```
+php artisan scribe:generate
+```
+
+Docs will be available at:
+```
+/docs
+```
+
+Then visit:
+```
+http://localhost:8000/docs
+```
+
+---
+
 ## 📦 Folder Structure
 
 ```
